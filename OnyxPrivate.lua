@@ -116,6 +116,38 @@ attach.CFrame = CFrame.new(-4.37113989e-08, 2.08716011, 0.996195018, -4.37113883
 	end,
 })
 
+local MainSection = MainTab:CreateSection("Randome Exploits")
+
+local FourBigGuysExploitV2NeedItem = MainTab:CreateButton({
+	Name = "4bigGuysExploitV2(Item Needed)",
+	Callback = function()
+     local a = 1
+    game:GetService("RunService").Heartbeat:Connect(function()
+   if a > 10000 then return end
+    a = a + 5
+   task.wait(0.02)
+     game:GetService("ReplicatedStorage").rbxts_include.node_modules["@rbxts"].net.out._NetManaged.aqqgBkqvenjsrBkpzdoapFtBiu:FireServer({
+    ["player"] = game:GetService("Players").LocalPlayer,
+    ["swordType"] = "juggernaut_rage_blade",
+ })
+  end)
+	end,
+})
+
+local InfiniteYieldToggle = MainTab:CreateToggle({
+	Name = "InfniteYield",
+	CurrentValue = false,
+	Flag = "InfiniteYield", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(GravityValue)
+		if GravityValue then
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+	else
+         wait(0.5)
+             game.Workspace.Gravity = 192.6
+		end
+	end,
+})
+
 local TeleportTab = Window:CreateTab("Teleports", 4483362458)
 local BedSection = TeleportTab:CreateSection("Teleports")
 
