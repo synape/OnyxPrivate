@@ -33,8 +33,6 @@ local TexturepackToggle = MainTab:CreateToggle({
 	Flag = "Texturepack", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(TexturepackValue)
 		if TexturepackValue then
-			_G.Velo = true
-            while _G.Velo do
                 local obj = game:GetObjects("rbxassetid://11144793662")[1]
                 obj.Name = "Part"
                 obj.Parent = game:GetService("ReplicatedStorage")
@@ -55,8 +53,6 @@ local TexturepackToggle = MainTab:CreateToggle({
               wait(0.2)
             end
        else
-            _G.Velo = false
-            while _G.Velo do
           print("disabled next round")
           wait(0.2)
             end
