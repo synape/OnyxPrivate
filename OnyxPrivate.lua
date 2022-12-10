@@ -27,15 +27,10 @@ local MainTab = Window:CreateTab("Main", 4483362458)-- Title, Image
 
 local MainSection = MainTab:CreateSection("Texturepack")
 
-local TexturepackToggle = MainTab:CreateToggle({
-	Name = "MCtexturepack",
-	CurrentValue = false,
-	Flag = "Texturepack", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(TexturepackValue)
-		if TexturepackValue then
-			_G.Velo = true
-            while _G.Velo do
-                local obj = game:GetObjects("rbxassetid://11144793662")[1]
+local RedBaseTp = MainTab:CreateButton({
+	Name = " MineCraft TexturePack",
+	Callback = function()
+		      local obj = game:GetObjects("rbxassetid://11144793662")[1]
                 obj.Name = "Part"
                 obj.Parent = game:GetService("ReplicatedStorage")
                 for i,v in pairs(obj:GetChildren()) do
@@ -52,20 +47,11 @@ local TexturepackToggle = MainTab:CreateToggle({
                     shared.con:Disconnect()
                 end)
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/eLeCtRaDoMiNuS/milkwareclient/main/texture.lua"))()
-              wait(0.2)
-            end
-       else
-            _G.Velo = false
-            while _G.Velo do
-          print("disabled next round")
-          wait(0.2)
-            end
-        end
 	end,
 })
 
 local TeleportTab = Window:CreateTab("Teleports", 4483362458)
-local BedSection = TeleportTab:CreateSection("Teleport To Team Generators")
+local BedSection = TeleportTab:CreateSection("Teleports")
 
 local BlueBaseTp = TeleportTab:CreateButton({
 	Name = "DeathBedTp(gets every bed then stops)",
