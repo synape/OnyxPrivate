@@ -134,7 +134,7 @@ local FourBigGuysExploitV2NeedItem = MainTab:CreateButton({
 })
 
 local InfiniteYieldToggle = MainTab:CreateToggle({
-	Name = "InfniteYield",
+	Name = "Load InfniteYield",
 	CurrentValue = false,
 	Flag = "InfiniteYield", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(GravityValue)
@@ -147,7 +147,7 @@ local InfiniteYieldToggle = MainTab:CreateToggle({
 	end,
 })
 
-local TeleportTab = Window:CreateTab("Teleports", 4483362458)
+local TeleportTab = Window:CreateTab("Autowin stuff", 4483362458)
 local BedSection = TeleportTab:CreateSection("Teleports")
 
 local BlueBaseTp = TeleportTab:CreateButton({
@@ -256,6 +256,57 @@ game:service "Players".LocalPlayer.CharacterAdded:Connect(bedtp)
 	end,
 })
 
+local BlueBaseTp = TeleportTab:CreateButton({
+	Name = "DuelsAutoWin",
+	Callback = function()
+wait(2);
+local v1 = game.Players.LocalPlayer.Character;
+v1:FindFirstChild("HumanoidRootPart");
+v2 = loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/loadstring",true))();
+for i1,v3 in pairs(game:GetService("Players"):GetChildren()) do
+    v3.Chatted:Connect(function(msg) end);
+end;
+
+repeat wait() until game:GetService("ReplicatedStorage"):FindFirstChild("Inventories"):FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("wood_pickaxe");
+
+local v4 = game:GetService("ReplicatedStorage"):FindFirstChild("Inventories"):FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("wood_pickaxe");
+local v5 = game:GetService("ReplicatedStorage"):FindFirstChild("Inventories"):FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("wood_swoird");
+
+--something abt placeid here too lazy to remake it.
+
+local v6 = game.Players.LocalPlayer.Character;
+local v7 = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart");
+
+for i2,v8 in pairs(workspace:GetChildren()) do
+    if v8.Name == "bed" then
+        if v8.Covers.BrickColor ~= game.Players.LocalPlayer.Team.TeamColor then
+            wait()
+            game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = v8.CFrame
+            wait(.2)
+            game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = v8.CFrame
+            local v9 = game.Players.LocalPlayer.Character;
+        end;
+    end;
+end;
+wait(10);
+for i3,v10 in pairs(game.Players:GetPlayers()) do
+    if v10.Character and v10.Character.PrimaryPart then
+        if v10.Team ~= game.Players.LocalPlayer.Team then
+            print(v10.Name);
+            while v10 and v10.Character.Humanoid.Health > 0 and v10.Character.PrimaryPart do
+                task.spawn(function() -- this isnt in their code however i am too lazy to figure out a better method
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v10.Character.PrimaryPart.CFrame;
+                end)
+                wait(.1);
+            end;
+        end;
+    end;
+end;
+local v11 = {}
+	end,
+})
+
+
 local YesIdcTab = Window:CreateTab("Sky Stuff", 4483362458)
 local SkySection = YesIdcTab:CreateSection("Custom")
 
@@ -298,7 +349,7 @@ local CustomNightSkyToggle = YesIdcTab:CreateToggle({
             game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=6123668090"
             game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=6123668561"
             game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=6123668964"
-	else
+	   else
             game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=7018684000"
             game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6334928194"
             game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=7018684000"
@@ -326,7 +377,7 @@ local CustomPinkSkyToggle = YesIdcTab:CreateToggle({
             game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=271042310"
             game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=271042467"
             game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=271077958"
-	else
+	    else
             game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=7018684000"
             game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6334928194"
             game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=7018684000"
@@ -353,7 +404,7 @@ local CustomRealisticSkyToggle = YesIdcTab:CreateToggle({
             game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=144933244"
             game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=144933299"
             game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=144931564"
-	else
+	    else
             game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=7018684000"
             game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6334928194"
             game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=7018684000"
@@ -369,6 +420,41 @@ local CustomRealisticSkyToggle = YesIdcTab:CreateToggle({
 })
 
 
+local CustomRealisticSkyToggle = YesIdcTab:CreateToggle({
+	Name = "Ambience",
+	CurrentValue = false,
+	Flag = "VeryNotCoolIg", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(GravityValue)
+		if GravityValue then
+                game.Lighting.Ambient = Color3.fromRGB(170, 0, 255)
+			    local tint = Instance.new("ColorCorrectionEffect", game.Lighting)
+			    tint.TintColor = Color3.fromRGB(225, 200, 255)
+			    local newsky = Instance.new("Sky", game.Lighting)
+			    newsky.SkyboxBk = "rbxassetid://8539982183"
+			    newsky.SkyboxDn = "rbxassetid://8539981943"
+			    newsky.SkyboxFt = "rbxassetid://8539981721"-- skidded
+			    newsky.SkyboxLf = "rbxassetid://8539981424"
+			    newsky.SkyboxRt = "rbxassetid://8539980766"
+			    newsky.SkyboxUp = "rbxassetid://8539981085"
+			    newsky.MoonAngularSize = 0
+			    newsky.SunAngularSize = 0
+			    newsky.StarCount = 3e3
+			    table.insert(TempAssets, newsky)
+			    table.insert(TempAssets, tint)
+	    else
+            game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6334928194"
+            game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=7018689553"
+            game.Lighting.FogColor = Color3.new(1, 1, 1)
+            game.Lighting.FogEnd = "10000"
+            game.Lighting.FogStart = "0"
+            game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end,
+})
 
 
 Rayfield:LoadConfiguration()
