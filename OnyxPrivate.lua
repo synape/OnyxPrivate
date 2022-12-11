@@ -256,7 +256,7 @@ game:service "Players".LocalPlayer.CharacterAdded:Connect(bedtp)
 	end,
 })
 
-local BlueBaseTp = TeleportTab:CreateButton({
+local BlueBaseTp = Teleportab:CreateButton({
 	Name = "DuelsAutoWin",
 	Callback = function()
 wait(2);
