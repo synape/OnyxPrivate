@@ -25,9 +25,9 @@ local Window = Rayfield:CreateWindow({
 
 local MainTab = Window:CreateTab("Main", 4483362458)-- Title, Image
 
-local MainSection = MainTab:CreateSection("Texturepack")
+local MainSection = MainTab:CreateSection("TEXTUREPACKS")
 
-local Texturepack = MainTab:CreateButton({
+local TEXTUREPACKS = MainTab:CreateButton({
 	Name = " MineCraft TexturePack",
 	Callback = function()
 		      local obj = game:GetObjects("rbxassetid://11144793662")[1]
@@ -50,8 +50,7 @@ local Texturepack = MainTab:CreateButton({
 	end,
 })
 
-
-local Texturepack = MainTab:CreateButton({
+local TEXTUREPACKS = MainTab:CreateButton({
 	Name = "Hot Texturepack",
 	Callback = function()
 game:GetObjects("rbxassetid://7062163349")[1].Parent = workspace
@@ -256,5 +255,120 @@ end
 game:service "Players".LocalPlayer.CharacterAdded:Connect(bedtp)
 	end,
 })
+
+local YesIdcTab = Window:CreateTab("Sky Stuff", 4483362458)
+local SkySection = YesIdcTab:CreateSection("Custom")
+
+local CustomDarkMountainSkyToggle = YesIdcTab:CreateToggle({
+	Name = "Dark Mountain Sky",
+	CurrentValue = false,
+	Flag = "VeryCoolSky", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(GravityValue)
+		if GravityValue then
+            game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/Asset/?ID=12064107"
+            game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/Asset/?ID=12064152"
+            game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/Asset/?ID=12064121"
+            game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/Asset/?ID=12063984"
+            game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/Asset/?ID=12064115"
+            game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/Asset/?ID=12064131"
+	else
+            game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6334928194"
+            game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=7018689553"
+            game.Lighting.FogColor = Color3.new(1, 1, 1)
+            game.Lighting.FogEnd = "10000"
+            game.Lighting.FogStart = "0"
+            game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end,
+})
+
+local CustomNightSkyToggle = YesIdcTab:CreateToggle({
+	Name = "Night Sky",
+	CurrentValue = false,
+	Flag = "VeryNotCool", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(GravityValue)
+		if GravityValue then
+            game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=6123663583"
+            game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6123664133"
+            game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=6123666950"
+            game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=6123668090"
+            game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=6123668561"
+            game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=6123668964"
+	else
+            game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6334928194"
+            game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=7018689553"
+            game.Lighting.FogColor = Color3.new(1, 1, 1)
+            game.Lighting.FogEnd = "10000"
+            game.Lighting.FogStart = "0"
+            game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end,
+})
+
+
+local CustomPinkSkyToggle = YesIdcTab:CreateToggle({
+	Name = "Pink Sky",
+	CurrentValue = false,
+	Flag = "VeryNotSky", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(GravityValue)
+		if GravityValue then
+            game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=271042516"
+            game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=271077243"
+            game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=271042556"
+            game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=271042310"
+            game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=271042467"
+            game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=271077958"
+	else
+            game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6334928194"
+            game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=7018689553"
+            game.Lighting.FogColor = Color3.new(1, 1, 1)
+            game.Lighting.FogEnd = "10000"
+            game.Lighting.FogStart = "0"
+            game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end,
+})
+
+local CustomRealisticSkyToggle = YesIdcTab:CreateToggle({
+	Name = "Realistic Sky",
+	CurrentValue = false,
+	Flag = "VeryNotLol", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(GravityValue)
+		if GravityValue then
+            game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=144933338"
+            game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=144931530"
+            game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=144933262"
+            game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=144933244"
+            game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=144933299"
+            game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=144931564"
+	else
+            game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxDn = "http://www.roblox.com/asset/?id=6334928194"
+            game.Lighting.Sky.SkyboxFt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxLf = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxRt = "http://www.roblox.com/asset/?id=7018684000"
+            game.Lighting.Sky.SkyboxUp = "http://www.roblox.com/asset/?id=7018689553"
+            game.Lighting.FogColor = Color3.new(1, 1, 1)
+            game.Lighting.FogEnd = "10000"
+            game.Lighting.FogStart = "0"
+            game.Lighting.Ambient = Color3.new(0, 0, 0)
+		end
+	end,
+})
+
+
+
 
 Rayfield:LoadConfiguration()
