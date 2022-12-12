@@ -23,7 +23,7 @@ local Window = Rayfield:CreateWindow({
 })
 
 
-local MainTab = Window:CreateTab("Main", 4483362458)-- Title, Image
+local MainTab = Window:CreateTab("Main", 4483362458)
 
 local MainSection = MainTab:CreateSection("TEXTUREPACKS")
 
@@ -35,7 +35,7 @@ local TEXTUREPACKS = MainTab:CreateButton({
                 obj.Parent = game:GetService("ReplicatedStorage")
                 for i,v in pairs(obj:GetChildren()) do
                     if string.lower(v.Name):find("cross") then
-                        for i2,b in pairs(v:GetChildren()) do-- SKIDDED
+                        for i2,b in pairs(v:GetChildren()) do
                             b:Destroy()
                         end
                     end
@@ -136,7 +136,7 @@ local FourBigGuysExploitV2NeedItem = MainTab:CreateButton({
 local InfiniteYieldToggle = MainTab:CreateToggle({
 	Name = "Load InfniteYield",
 	CurrentValue = false,
-	Flag = "InfiniteYield", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "InfiniteYield",
 	Callback = function(GravityValue)
 		if GravityValue then
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
@@ -200,7 +200,7 @@ local SkySection = YesIdcTab:CreateSection("Custom")
 local CustomDarkMountainSkyToggle = YesIdcTab:CreateToggle({
 	Name = "Dark Mountain Sky",
 	CurrentValue = false,
-	Flag = "VeryCoolSky", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "VeryCoolSky",
 	Callback = function(GravityValue)
 		if GravityValue then
             game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/Asset/?ID=12064107"
@@ -227,7 +227,7 @@ local CustomDarkMountainSkyToggle = YesIdcTab:CreateToggle({
 local CustomNightSkyToggle = YesIdcTab:CreateToggle({
 	Name = "Night Sky",
 	CurrentValue = false,
-	Flag = "VeryNotCool", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "VeryNotCool",
 	Callback = function(GravityValue)
 		if GravityValue then
             game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=6123663583"
@@ -255,7 +255,7 @@ local CustomNightSkyToggle = YesIdcTab:CreateToggle({
 local CustomPinkSkyToggle = YesIdcTab:CreateToggle({
 	Name = "Pink Sky",
 	CurrentValue = false,
-	Flag = "VeryNotSky", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "VeryNotSky",
 	Callback = function(GravityValue)
 		if GravityValue then
             game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=271042516"
@@ -282,7 +282,7 @@ local CustomPinkSkyToggle = YesIdcTab:CreateToggle({
 local CustomRealisticSkyToggle = YesIdcTab:CreateToggle({
 	Name = "Realistic Sky",
 	CurrentValue = false,
-	Flag = "VeryNotLol", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "VeryNotLol", 
 	Callback = function(GravityValue)
 		if GravityValue then
             game.Lighting.Sky.SkyboxBk = "http://www.roblox.com/asset/?id=144933338"
@@ -310,7 +310,7 @@ local CustomRealisticSkyToggle = YesIdcTab:CreateToggle({
 local CustomRealisticSkyToggle = YesIdcTab:CreateToggle({
 	Name = "Ambience",
 	CurrentValue = false,
-	Flag = "VeryNotCoolIg", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Flag = "VeryNotCoolIg",
 	Callback = function(GravityValue)
 		if GravityValue then
                 game.Lighting.Ambient = Color3.fromRGB(170, 0, 255)
